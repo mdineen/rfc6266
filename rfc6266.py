@@ -269,7 +269,7 @@ def CaseInsensitiveLiteral(lit):
 
 # RFC 2616
 separator_chars = "()<>@,;:\\\"/[]?={} \t"
-ctl_chars = ''.join(chr(i) for i in xrange(32)) + chr(127)
+ctl_chars = ''.join(chr(i) for i in range(32)) + chr(127)
 nontoken_chars = separator_chars + ctl_chars
 
 # RFC 5987
@@ -305,7 +305,7 @@ token = Any(token_chars)[1:, ...]
 # and all the others are defined with Any.
 qdtext = AnyBut('"' + ctl_chars)
 
-char = Any(''.join(chr(i) for i in xrange(128)))  # ascii range: 0-127
+char = Any(''.join(chr(i) for i in range(128)))  # ascii range: 0-127
 
 quoted_pair = Drop('\\') + char
 quoted_string = Drop('"') & (quoted_pair | qdtext)[:, ...] & Drop('"')
