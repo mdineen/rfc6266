@@ -13,7 +13,7 @@ build_header handles the sender side.
 
 from lepl import *
 from collections import namedtuple
-from urllib import quote, unquote
+from urllib.parse import quote, unquote
 from urlparse import urlsplit
 from string import hexdigits, ascii_letters, digits
 
